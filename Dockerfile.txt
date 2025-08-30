@@ -1,0 +1,26 @@
+# Use the official Python image from Docker Hub
+FROM python:3.9-slim
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Install required Python packages
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Install additional system dependencies (e.g., for sqlite3 or any other system dependencies)
+RUN apt-get update && apt-get install -y libsqlite3-dev && rm -rf /var/lib/apt/lists/*
+
+# Expose port if needed (for the bot, not necessary unless running a web service)
+# EXPOSE 8080
+
+# Ignore virtual environment folder
+.venv/
+
+# Ignore logs
+*.log
+
+# Ignore database backups and other large unnecessary files
+backups_gui/
+
+# Ignore config files that shouldn't be included
+.env
