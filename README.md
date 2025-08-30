@@ -101,7 +101,7 @@ This project expects `config.py`. To keep the README clean, populate `config.py`
 
 ## Files you care about
 
-* `mian.py` — main bot code
+* `main.py` — main bot code
 * `database.py` — async SQLite wrapper
 * `config.py` — set `TOKEN` and `ADMIN_ID` here
 * `gui.py`(in main) — Tkinter controller for start/stop/logs/backups
